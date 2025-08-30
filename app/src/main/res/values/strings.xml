@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">speak2ui</string>
+    <string name="accessibility_service_description">
+        Voice screen control accessibility service
+    </string>
+    <string name="ime_name">ASR Keyboard</string>
+    <string name="instruction">Press the MIC button on the home screen.</string>
+</resources>

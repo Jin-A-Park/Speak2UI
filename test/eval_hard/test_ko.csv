@@ -1,0 +1,88 @@
+﻿ID,query,intent,value,clickables
+1,대화 두 번 클릭해,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+2,대화 두 번 탭해,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+3,대화 두 번 눌러,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+4,대화 길게 클릭해,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+5,대화 길게 탭해,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+6,대화 길게 눌러,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+7,블루투스로 음성 재생 두 번 클릭해,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+8,블루투스로 음성 재생 두 번 탭해,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+9,블루투스로 음성 재생 두 번 눌러,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+10,블루투스로 음성 재생 길게 클릭해,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+11,블루투스로 음성 재생 길게 탭해,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+12,블루투스로 음성 재생 길게 눌러,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+13,새로운 apn 두 번 클릭해,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+14,새로운 apn 두 번 탭해,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+15,새로운 apn 두 번 눌러,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+16,새로운 apn 길게 클릭해,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+17,새로운 apn 길게 탭해,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+18,새로운 apn 길게 눌러,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+19,너의 프로필 두 번 클릭해,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+20,너의 프로필 두 번 탭해,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+21,너의 프로필 두 번 눌러,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+22,너의 프로필 길게 클릭해,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+23,너의 프로필 길게 탭해,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+24,너의 프로필 길게 눌러,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+25,앱 공유 두 번 클릭해,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+26,앱 공유 두 번 탭해,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+27,앱 공유 두 번 눌러,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+28,앱 공유 길게 클릭해,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+29,앱 공유 길게 탭해,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+30,앱 공유 길게 눌러,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+31,인쇄 두 번 클릭해,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+32,인쇄 두 번 탭해,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+33,인쇄 두 번 눌러,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+34,인쇄 길게 클릭해,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+35,인쇄 길게 탭해,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+36,인쇄 길게 눌러,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+37,취소 두 번 클릭해,DOUBLE_PRESS,['cancel'],"['yes', 'cancel']"
+38,취소 두 번 탭해,DOUBLE_PRESS,['cancel'],"['yes', 'cancel']"
+39,취소 두 번 눌러,DOUBLE_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+40,취소 길게 클릭해,LONG_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+41,취소 길게 탭해,LONG_PRESS,['cancel'],"['cancel', 'save']"
+42,취소 길게 눌러,LONG_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+43,헤드셋 연결 두 번 클릭해,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+44,헤드셋 연결 두 번 탭해,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+45,헤드셋 연결 두 번 눌러,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+46,헤드셋 연결 길게 클릭해,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+47,헤드셋 연결 길게 탭해,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+48,헤드셋 연결 길게 눌러,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+49,광고 차단 두 번 클릭해,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+50,광고 차단 두 번 탭해,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+51,광고 차단 두 번 눌러,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+52,광고 차단 길게 클릭해,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+53,광고 차단 길게 탭해,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+54,광고 차단 길게 눌러,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+55,가시성 두 번 클릭해,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+56,가시성 두 번 탭해,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+57,가시성 두 번 눌러,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+58,가시성 길게 클릭해,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+59,가시성 길게 탭해,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+60,가시성 길게 눌러,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+61,홈으로 이동해,HOME,[],[]
+62,메인 화면,HOME,[],[]
+63,메인 화면으로 돌아가,HOME,[],[]
+64,이전 화면으로 돌아가,BACK,[],[]
+65,뒤로 가,BACK,[],[]
+66,이전 화면,BACK,[],[]
+67,옵션 버튼 눌러,OVERVIEW_BUTTON,[],[]
+68,오버뷰 버튼 눌러,OVERVIEW_BUTTON,[],[]
+69,현재 작업 보여줘,OVERVIEW_BUTTON,[],[]
+70,홈으로 이동해,HOME,[],[]
+71,메인 화면,HOME,[],[]
+72,메인 화면으로 돌아가,HOME,[],[]
+73,이전 화면으로 돌아가,BACK,[],[]
+74,뒤로 가,BACK,[],[]
+75,이전 화면,BACK,[],[]
+76,옵션 버튼 눌러,OVERVIEW_BUTTON,[],[]
+77,오버뷰 버튼 눌러,OVERVIEW_BUTTON,[],[]
+78,현재 작업 보여줘,OVERVIEW_BUTTON,[],[]
+79,3 탭해,PRESS,['3'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+80,1 눌러,PRESS,['1'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+81,2 클릭해,PRESS,['2'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+82,여보세요,NONE,[],"['cancel', 'save']"
+83,이게 뭐야?,NONE,[],"['battery_usage', 'battery_saver']"
+84,그래,NONE,[],"['battery_usage', 'battery_saver']"
+85,음,NONE,[],"['yes', 'cancel']"
+86,잠시만,NONE,[],"['chat', 'people', 'conversation']"
+87,엇,NONE,[],"['cancel', 'save']"

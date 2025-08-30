@@ -1,0 +1,88 @@
+ID,query,intent,value,clickables
+1,double click conversation,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+2,double tap conversation,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+3,double press conversation,DOUBLE_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+4,long click conversation,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+5,long tap conversation,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+6,long press conversation,LONG_PRESS,['conversation'],"['chat', 'people', 'conversation']"
+7,double click play voice over bluetooth,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+8,double tap play voice over bluetooth,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+9,double press play voice over bluetooth,DOUBLE_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+10,long click play voice over bluetooth,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+11,long tap play voice over bluetooth,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+12,long press play voice over bluetooth,LONG_PRESS,['play_voice_over_bluetooth'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+13,double click new apn,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+14,double tap new apn,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+15,double press new apn,DOUBLE_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+16,long click new apn,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+17,long tap new apn,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+18,long press new apn,LONG_PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+19,double click your profile,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+20,double tap your profile,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+21,double press your profile,DOUBLE_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+22,long click your profile,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+23,long tap your profile,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+24,long press your profile,LONG_PRESS,['your_profile'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+25,double click share apps,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+26,double tap share apps,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+27,double press share apps,DOUBLE_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+28,long click share apps,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+29,long tap share apps,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+30,long press share apps,LONG_PRESS,['share_apps'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+31,double click printing,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+32,double tap printing,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+33,double press printing,DOUBLE_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+34,long click printing,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+35,long tap printing,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+36,long press printing,LONG_PRESS,['printing'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+37,double click cancel,DOUBLE_PRESS,['cancel'],"['yes', 'cancel']"
+38,double tap cancel,DOUBLE_PRESS,['cancel'],"['yes', 'cancel']"
+39,double press cancel,DOUBLE_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+40,long click cancel,LONG_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+41,long tap cancel,LONG_PRESS,['cancel'],"['cancel', 'save']"
+42,long press cancel,LONG_PRESS,['cancel'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+43,double click headset plugged any,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+44,double tap headset plugged any,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+45,double press headset plugged any,DOUBLE_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+46,long click headset plugged any,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+47,long tap headset plugged any,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+48,long press headset plugged any,LONG_PRESS,['headset_plugged_any'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+49,double click ad blocking,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+50,double tap ad blocking,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+51,double press ad blocking,DOUBLE_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+52,long click ad blocking,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+53,long tap ad blocking,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+54,long press ad blocking,LONG_PRESS,['ad_blocking'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+55,double click visibility,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+56,double tap visibility,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+57,double press visibility,DOUBLE_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+58,long click visibility,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+59,long tap visibility,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+60,long press visibility,LONG_PRESS,['visibility'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+61,please go home,HOME,[],[]
+62,please main screen,HOME,[],[]
+63,please back to main screen,HOME,[],[]
+64,please go back to previous screen,BACK,[],[]
+65,please go back,BACK,[],[]
+66,please previous screen,BACK,[],[]
+67,please press option button,OVERVIEW_BUTTON,[],[]
+68,please press overview button,OVERVIEW_BUTTON,[],[]
+69,please show current task,OVERVIEW_BUTTON,[],[]
+70,go home,HOME,[],[]
+71,main screen,HOME,[],[]
+72,back to main screen,HOME,[],[]
+73,go back to previous screen,BACK,[],[]
+74,go back,BACK,[],[]
+75,previous screen,BACK,[],[]
+76,press option button,OVERVIEW_BUTTON,[],[]
+77,press overview button,OVERVIEW_BUTTON,[],[]
+78,show current task,OVERVIEW_BUTTON,[],[]
+79,tap 3,PRESS,['3'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+80,press 1,PRESS,['1'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+81,click 2,PRESS,['2'],"['archive', 'your_activity', 'settings', '1', '2', '3', '4']"
+82,hello,NONE,[],"['cancel', 'save']"
+83,what is it?,NONE,[],"['battery_usage', 'battery_saver']"
+84,Alright,NONE,[],"['battery_usage', 'battery_saver']"
+85,Hmm,NONE,[],"['yes', 'cancel']"
+86,Hold on.,NONE,[],"['chat', 'people', 'conversation']"
+87,Oops.,NONE,[],"['cancel', 'save']"

@@ -1,0 +1,102 @@
+ID,query,intent,value,clickables
+1,go to the Play Store.,OPEN,['app:play_store'],[]
+2,tap Account .,PRESS,['account'],"['games', 'apps', 'account', 'books', 'category']"
+3,open WhatsApp.,OPEN,['app:whatsapp'],[]
+4,type your message.,ENTER,['your message'],[]
+5,tap the smiley face.,PRESS,['smiley_face'],"['send', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+6,tap the mini keyboard icon.,PRESS,['mini_keyboard_icon'],"['send', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+7,Tap the emoji.,PRESS,['emoji'],['emoji']
+8,Tap the send icon.,PRESS,['send_icon'],"['send_icon', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+9,Open Office Lens.,OPEN,['app:office_lens'],[]
+10,swipe up .,SWIPE,['UP'],[]
+11,Open the Facebook Messenger app.,OPEN,['app:facebook_messenger'],[]
+12,Select conversation.,PRESS,['conversation'],"['chat', 'people', 'conversation']"
+13,tap on the i menu.,PRESS,['i_menu'],"['aa', 'i_menu', 'send']"
+14,launch the Fitbit app .,OPEN,['app:fitbit'],[]
+15,Tap the Account icon.,PRESS,['account_icon'],"['today', 'account_icon', 'discover', 'community', 'premium', 'covid-19']"
+16,Tap the Wallet.,PRESS,['wallet'],"['amazon_alexa', 'clock_faces', 'apps', 'media', 'wallet', 'how_to_use']"
+17,enter 4-digit PIN code.,ENTER,['4-digit PIN code'],[]
+18,then click Privacy .,PRESS,['privacy'],"['privacy', 'accessibility', 'search', 'general', 'advanced']"
+19,Then check off Clear private data on exit.,PRESS,['clear_private_data_on_exit'],"['clear_private_data_on_exit', 'manage_logins', 'do_not_track', 'tracking_protection', 'cache', 'cookies']"
+20,launch Opera app.,OPEN,['app:opera'],[]
+21,Tap the Opera logo.,PRESS,['opera_logo'],"['ebay', 'opera_logo', 'amazon', 'search']"
+22,Tap Settings .,PRESS,['settings'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+23,Scroll down .,SWIPE,['DOWN'],[]
+24,tap Clear browsing data.,PRESS,['clear_browsing_data'],"['send_usage_reports', 'clear_browsing_data', 'frequently_asked_question', 'report_a_problem', 'about_opera', 'passwords', 'site_settings', 'payments']"
+25,Start Tasker.,OPEN,['app:tasker'],[]
+26,go to the Profiles tab.,PRESS,['profiles'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+27,click the Plus symbol.,PRESS,['plus_symbol'],"['plus_symbol', 'search', 'option']"
+28,then select Phone .,PRESS,['phone'],"['home', 'menu', 'settings', 'google', 'play_store', 'tmobile', 'messages', 'phone', 'files', 'drive', 'camera', 'calendar', 'contacts']"
+29,choose Compose SMS .,PRESS,['compose_sms'],"['search_links', 'compose_sms', 'option']"
+30,Type the recipients that you want to send the text to.,ENTER,['the recipients that you want to send the text to'],[]
+31,Open Settings app.,OPEN,['app:settings'],[]
+32,Tap Battery.,PRESS,['battery'],"['storage', 'battery', 'sound_&_vibration', 'display', 'wallpaper_&_style', 'accessibility', 'security', 'privacy']"
+33,choose Adaptive Battery .,PRESS,['adaptive_battery'],"['battery_usage', 'battery_saver', 'adaptive_battery', 'battery_percentage']"
+34,Tap Open.,PRESS,['open'],['open']
+35,Tap the double-horizontal ellipsis icon.,PRESS,['double-horizontal_ellipsis_icon'],['double-horizontal_ellipsis_icon']
+36,swipe up.,SWIPE,['UP'],[]
+37,Open Calendar .,OPEN,['app:calendar'],[]
+38,Tap the plus sign .,PRESS,['plus_sign'],"['search', 'july', 'plus_sign', 'menu']"
+39,"Enter Title, date, time and details.",ENTER,"['Title, date, time and details']",[]
+40,tap Save .,PRESS,['save'],"['cancel', 'save']"
+41,Tap Dolphin icon.,PRESS,['dolphin_icon'],"['dolphin_icon', 'search_or_enter_address', 'bookmark_icon', 'plugins']"
+42,Tap Clear data .,PRESS,['clear_data'],"['downloads', 'exit', 'clear_data']"
+43,Check off Browsing history .,PRESS,['browsing_history'],"['browsing_history', 'cache_and_site_data', 'cookies', 'clear_selected_data', 'form_data', 'passwords', 'location_access']"
+44,Tap Clear selected data .,PRESS,['clear_selected_data'],"['browsing_history', 'cache_and_site_data', 'cookies', 'clear_selected_data', 'form_data', 'passwords', 'location_access']"
+45,Open Digital Wellbeing app.,OPEN,['app:digital_well_being'],[]
+46,Open Tasker.,OPEN,['app:tasker'],[]
+47,Launch the Play Store app.,OPEN,['app:play_store'],[]
+48,Tap on My apps & games .,PRESS,['my_apps_&_games'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+49,Tap on Installed.,PRESS,['installed'],"['installed', 'overview', 'update_available', 'games']"
+50,Tap on the Uninstall button.,PRESS,['uninstall'],"['uninstall', 'update', 'search', 'option', 'rate_this_app']"
+51,launch Gallery .,OPEN,['app:gallery'],[]
+52,Tap an album.,PRESS,['album'],"['photos', 'search', 'sharing', 'library', 'album']"
+53,Tap Yes.,PRESS,['yes'],"['yes', 'cancel']"
+54,Launch the Google Play Music app.,OPEN,['app:google_music_app'],[]
+55,Tap the menu button.,PRESS,['menu'],"['menu', 'cast', 'search', 'more']"
+56,tap Podcasts.,PRESS,['podcasts'],"['top_charts', 'listen_now', 'new_releases', 'podcasts', 'shop', 'subscribe']"
+57,tap Your Podcasts.,PRESS,['your_podcast'],"['top_charts', 'your_podcast']"
+58,Tap Manage subscription.,PRESS,['manage_subscription'],['manage_subscription']
+59,swipe up.,SWIPE,['UP'],[]
+60,Tap Network operators .,PRESS,['network_operators'],"['network_operators', 'data_monitoring', 'access_point_names', 'data_roaming', 'mobile_data']"
+61,Tap Search now .,PRESS,['search_now'],"['search_now', 'select_automatically']"
+62,Scroll down.,SWIPE,['DOWN'],[]
+63,open the Google Maps app .,OPEN,['app:google_maps'],[]
+64,Tap Account Circle .,PRESS,['account_circle'],"['search_here', 'account_circle', 'latest_in_the_area', 'go', 'saved', 'updates']"
+65,tap Settings .,PRESS,['settings'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+66,Navigation settings .,PRESS,['navigation_settings'],"['manage_your_preferences', 'navigation_settings', 'shake_to_send_feedback', 'about', 'terms_&_privacy', 'sign_out_of_google_maps', 'show_scale_on_map', 'start_maps_in_satellite_view', 'distance_units', 'chat', 'notifications']"
+67,"lastly, press Voice level .",PRESS,['voice_level'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+68,Choose Louder.,PRESS,['louder'],"['softer', 'normal', 'louder', 'muted', 'alerts_only', 'unmuted']"
+69,Select language.,PRESS,['language'],"['manage_your_preferences', 'navigation_settings', 'shake_to_send_feedback', 'about', 'terms_&_privacy', 'sign_out_of_google_maps', 'language', 'wifi_only', 'offline_maps_settings', 'google_location_settings', 'personal_content']"
+70,press Settings.,PRESS,['settings'],"['home', 'menu', 'settings', 'google', 'play_store', 'tmobile', 'messages', 'phone', 'files', 'drive', 'camera', 'calendar', 'contacts']"
+71,Tap Mobile networks .,PRESS,['mobile_networks'],"['vpn', 'mobile_networks', 'bluetooth', 'airplane_mode', 'mobile_data']"
+72,Tap Access Point Names .,PRESS,['access_point_names'],"['network_operators', 'data_monitoring', 'access_point_names', 'data_roaming', 'mobile_data']"
+73,Tap Mobile networks button.,PRESS,['mobile_networks'],"['vpn', 'mobile_networks', 'bluetooth', 'airplane_mode', 'mobile_data']"
+74,tap the MORE icon.,PRESS,['more_icon'],"['more_icon', 'back_icon', 'apn_1']"
+75,tap New APN .,PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+76,Tap three-dot menu icon.,PRESS,['three-dot_menu_icon'],"['search_or_type', 'facebook', 'youtube', 'three-dot_menu_icon']"
+77,enter PIN.,ENTER,['PIN'],[]
+78,Tap Settings.,PRESS,['settings'],"['new_tab', 'new_incognito_tab', 'bookmarks', 'recent_tabs', 'history', 'settings', 'downloads', 'help_&_feedback', 'desktop_site']"
+79,Scroll down to the Advanced section.,SWIPE,['DOWN'],[]
+80,tap Privacy.,PRESS,['privacy'],"['privacy', 'accessibility', 'site_settings', 'home_page', 'notifications', 'payment_methods', 'addresses_and_more', 'passwords', 'search_engine', 'sign_in_to_chrome', 'sync_and_google_services']"
+81,Scroll to the bottom.,SWIPE,['DOWN'],[]
+82,Launch incognito page in Chrome.,OPEN,"['component:incognito', 'app:chrome']",[]
+83,tap Clear browsing data.,PRESS,['clear_browsing_data'],"['clear_browsing_data', 'do_not_track', 'access_payment_methods', 'google_services', 'preload_pages_for_faster_browsing_and_searching']"
+84,Tap Settings.,PRESS,['settings'],"['new_tab', 'new_private_tab', 'bookmarks', 'find_in_page', 'history', 'settings', 'request_desktop_data', 'page', 'tools', 'help', 'add-ons']"
+85,Tap Clear private data .,PRESS,['clear_private_data'],"['sign_in', 'make_firefox_your_default_browser', 'general', 'search', 'privacy', 'accessibility', 'notifications', 'advanced', 'clear_private_data', 'mozilla_firefox']"
+86,Check off Browsing history .,PRESS,['browsing_history'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+87,Tap Clear Data.,PRESS,['clear_data'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+88,swipe up on an empty spot.,SWIPE,['UP'],[]
+89,Open Mobile network page in Settings app.,OPEN,"['component:mobile_network', 'app:settings']",[]
+90,Tap Connected devices.,PRESS,['connected_devices'],"['network_&_internet', 'connected_devices', 'apps', 'notifications', 'battery', 'storage', 'sound_&_vibration', 'display']"
+91,tap Bluetooth.,PRESS,['bluetooth'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+92,tap Settings .,PRESS,['settings'],"['home', 'menu', 'settings', 'clock', 'youtube', 'music', 'gmail', 'maps', 'google', 'play_store']"
+93,Open the Twitter app.,OPEN,['app:twitter'],[]
+94,click more .,PRESS,['more'],"['more', 'home', 'explore', 'notifications', 'messages', 'bookmarks', 'lists', 'profile', 'tweet']"
+95,press Authentication app.,PRESS,['authentication_app'],"['authentication_app', 'security_key', 'text_message']"
+96,open linkedIn mobile app.,OPEN,['app:linkedin'],[]
+97,Select Sign In and Security,PRESS,['sign_in_and_security'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+98,Turn on Two-Factor Authentication,PRESS,['two-factor_authentication'],"['phone_numbers', 'change_password', ""where_you're_signed_in"", 'two-factor_authentication']"
+99,open Instagram,OPEN,['app:instagram'],[]
+100,tap settings,PRESS,['settings'],"['archive', 'your_activity', 'or_code', 'saved', 'cart', 'close_friends', 'discover_people', 'settings']"
+101,tap security,PRESS,['security'],"['privacy', 'security', 'help', 'about', 'theme', 'account', 'ads', 'notifications', 'follow_and_invite_friends']"

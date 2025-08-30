@@ -1,0 +1,102 @@
+﻿ID,query,intent,value,clickables
+1,플레이 스토어로 이동해,OPEN,['app:play_store'],[]
+2,계정 탭해,PRESS,['account'],"['games', 'apps', 'account', 'books', 'category']"
+3,왓츠앱 열어,OPEN,['app:whatsapp'],[]
+4,너의 메시지 타이핑해,ENTER,['너의 메시지'],[]
+5,웃는 얼굴을 탭해,PRESS,['smiley_face'],"['send', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+6,미니 키보드 아이콘을 탭해,PRESS,['mini_keyboard_icon'],"['send', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+7,이모지 탭해,PRESS,['emoji'],['emoji']
+8,전송 아이콘을 탭해,PRESS,['send_icon'],"['send_icon', 'call', 'smiley_face', 'option', 'mini_keyboard_icon']"
+9,오피스 렌즈 열어,OPEN,['app:office_lens'],[]
+10,위로 밀어,SWIPE,['UP'],[]
+11,페이스북 메신저 앱 열어,OPEN,['app:facebook_messenger'],[]
+12,대화 선택해,PRESS,['conversation'],"['chat', 'people', 'conversation']"
+13,아이 메뉴를 탭해,PRESS,['i_menu'],"['aa', 'i_menu', 'send']"
+14,핏빗 앱 실행해,OPEN,['app:fitbit'],[]
+15,계정 아이콘을 탭해,PRESS,['account_icon'],"['today', 'account_icon', 'discover', 'community', 'premium', 'covid-19']"
+16,지갑 탭해,PRESS,['wallet'],"['amazon_alexa', 'clock_faces', 'apps', 'media', 'wallet', 'how_to_use']"
+17,4자리 우편번호 입력해,ENTER,['4자리 우편번호'],[]
+18,그리고 개인 정보 클릭해,PRESS,['privacy'],"['privacy', 'accessibility', 'search', 'general', 'advanced']"
+19,그리고 종료 시 개인 데이터 삭제를 해제해,PRESS,['clear_private_data_on_exit'],"['clear_private_data_on_exit', 'manage_logins', 'do_not_track', 'tracking_protection', 'cache', 'cookies']"
+20,오페라 앱 실행해,OPEN,['app:opera'],[]
+21,오페라 로고를 탭해,PRESS,['opera_logo'],"['ebay', 'opera_logo', 'amazon', 'search']"
+22,설정을 탭해,PRESS,['settings'],"['downloads', 'settings', 'history', 'bookmarks', 'offline_pages', 'night_mode', 'ad_blocking']"
+23,아래로 스크롤해,SWIPE,['DOWN'],[]
+24,브라우징 데이터 삭제하기 탭해,PRESS,['clear_browsing_data'],"['send_usage_reports', 'clear_browsing_data', 'frequently_asked_question', 'report_a_problem', 'about_opera', 'passwords', 'site_settings', 'payments']"
+25,테스커 시작해,OPEN,['app:tasker'],[]
+26,프로필 탭으로 이동해,PRESS,['profiles'],"['tasks', 'scenes', 'profiles', 'home', 'internet', 'orientation_face_down', 'headset_plugged_any', 'received_text_any']"
+27,플러스 기호를 클릭해,PRESS,['plus_symbol'],"['plus_symbol', 'search', 'option']"
+28,그리고 전화 선택해,PRESS,['phone'],"['home', 'menu', 'settings', 'google', 'play_store', 'tmobile', 'messages', 'phone', 'files', 'drive', 'camera', 'calendar', 'contacts']"
+29,문자 작성 선택해,PRESS,['compose_sms'],"['search_links', 'compose_sms', 'option']"
+30,텍스트를 보낼 수신자를 타이핑해,ENTER,['텍스트를 보낼 수신자'],[]
+31,설정 앱 열어,OPEN,['app:settings'],[]
+32,배터리 탭해,PRESS,['battery'],"['storage', 'battery', 'sound_&_vibration', 'display', 'wallpaper_&_style', 'accessibility', 'security', 'privacy']"
+33,적응형 배터리 선택해,PRESS,['adaptive_battery'],"['battery_usage', 'battery_saver', 'adaptive_battery', 'battery_percentage']"
+34,열기 탭해,PRESS,['open'],['open']
+35,가로 점 세 개 아이콘을 탭해,PRESS,['double-horizontal_ellipsis_icon'],['double-horizontal_ellipsis_icon']
+36,위로 밀어,SWIPE,['UP'],[]
+37,달력 열어,OPEN,['app:calendar'],[]
+38,플러스 기호를 탭해,PRESS,['plus_sign'],"['search', 'july', 'plus_sign', 'menu']"
+39,"제목, 날짜, 시간 및 세부 정보 입력해",ENTER,"['제목, 날짜, 시간 및 세부 정보']",[]
+40,저장 탭해,PRESS,['save'],"['cancel', 'save']"
+41,돌고래 아이콘을 탭해,PRESS,['dolphin_icon'],"['dolphin_icon', 'search_or_enter_address', 'bookmark_icon', 'plugins']"
+42,데이터 지우기 탭해,PRESS,['clear_data'],"['downloads', 'exit', 'clear_data']"
+43,방문 기록 선택 해제해,PRESS,['browsing_history'],"['browsing_history', 'cache_and_site_data', 'cookies', 'clear_selected_data', 'form_data', 'passwords', 'location_access']"
+44,선택한 데이터 지우기 탭해,PRESS,['clear_selected_data'],"['browsing_history', 'cache_and_site_data', 'cookies', 'clear_selected_data', 'form_data', 'passwords', 'location_access']"
+45,디지털 웰빙 앱 열어,OPEN,['app:digital_well_being'],[]
+46,테스커 열어,OPEN,['app:tasker'],[]
+47,플레이 스토어 앱을 실행해,OPEN,['app:play_store'],[]
+48,내 앱 & 게임 탭해,PRESS,['my_apps_&_games'],"['overview', 'share_apps', 'updates_available', 'my_apps_&_games', 'update_all', 'see_details']"
+49,설치 탭해,PRESS,['installed'],"['installed', 'overview', 'update_available', 'games']"
+50,삭제 버튼을 탭해,PRESS,['uninstall'],"['uninstall', 'update', 'search', 'option', 'rate_this_app']"
+51,갤러리 실행해,OPEN,['app:gallery'],[]
+52,앨범을 탭해,PRESS,['album'],"['photos', 'search', 'sharing', 'library', 'album']"
+53,예 탭해,PRESS,['yes'],"['yes', 'cancel']"
+54,구글 플레이 뮤직 앱을 실행해,OPEN,['app:google_music_app'],[]
+55,메뉴 버튼 탭해,PRESS,['menu'],"['menu', 'cast', 'search', 'more']"
+56,팟캐스트 탭해,PRESS,['podcasts'],"['top_charts', 'listen_now', 'new_releases', 'podcasts', 'shop', 'subscribe']"
+57,너의 팟캐스트 탭해,PRESS,['your_podcast'],"['top_charts', 'your_podcast']"
+58,구독 관리 탭해,PRESS,['manage_subscription'],['manage_subscription']
+59,위로 밀어,SWIPE,['UP'],[]
+60,네트워크 실행 탭해,PRESS,['network_operators'],"['network_operators', 'data_monitoring', 'access_point_names', 'data_roaming', 'mobile_data']"
+61,지금 검색 탭해,PRESS,['search_now'],"['search_now', 'select_automatically']"
+62,아래로 밀어,SWIPE,['DOWN'],[]
+63,구글 지도 앱을 열어,OPEN,['app:google_maps'],[]
+64,원형 계정 탭해,PRESS,['account_circle'],"['search_here', 'account_circle', 'latest_in_the_area', 'go', 'saved', 'updates']"
+65,설정 탭해,PRESS,['settings'],"['turn_on_incognito_mode', 'settings', 'your_profile', 'location_sharing', 'offline_maps', 'your_data_in_maps', 'help_&_feedback']"
+66,내비게이션 설정,PRESS,['navigation_settings'],"['manage_your_preferences', 'navigation_settings', 'shake_to_send_feedback', 'about', 'terms_&_privacy', 'sign_out_of_google_maps', 'show_scale_on_map', 'start_maps_in_satellite_view', 'distance_units', 'chat', 'notifications']"
+67,"마지막으로, 음성 크기 눌러.",PRESS,['voice_level'],"['voice_level', 'voice_selection', 'play_voice_over_bluetooth', 'play_voice_during_phone_calls', 'play_test_sound', 'google_assistant_settings']"
+68,소리 키우기 선택해,PRESS,['louder'],"['softer', 'normal', 'louder', 'muted', 'alerts_only', 'unmuted']"
+69,언어 선택해,PRESS,['language'],"['manage_your_preferences', 'navigation_settings', 'shake_to_send_feedback', 'about', 'terms_&_privacy', 'sign_out_of_google_maps', 'language', 'wifi_only', 'offline_maps_settings', 'google_location_settings', 'personal_content']"
+70,설정 눌러,PRESS,['settings'],"['home', 'menu', 'settings', 'google', 'play_store', 'tmobile', 'messages', 'phone', 'files', 'drive', 'camera', 'calendar', 'contacts']"
+71,모바일 네트워크 탭해,PRESS,['mobile_networks'],"['vpn', 'mobile_networks', 'bluetooth', 'airplane_mode', 'mobile_data']"
+72,액세스 포인트 이름 탭해,PRESS,['access_point_names'],"['network_operators', 'data_monitoring', 'access_point_names', 'data_roaming', 'mobile_data']"
+73,모바일 네트워크 버튼 탭해,PRESS,['mobile_networks'],"['vpn', 'mobile_networks', 'bluetooth', 'airplane_mode', 'mobile_data']"
+74,더보기 아이콘 탭해,PRESS,['more_icon'],"['more_icon', 'back_icon', 'apn_1']"
+75,새 APN 탭해,PRESS,['new_apn'],"['back', 'restore_default_settings', 'new_apn']"
+76,세로 점 세 개 메뉴 아이콘을 탭해,PRESS,['three-dot_menu_icon'],"['search_or_type', 'facebook', 'youtube', 'three-dot_menu_icon']"
+77,PIN 입력해,ENTER,['PIN'],[]
+78,설정 탭해,PRESS,['settings'],"['new_tab', 'new_incognito_tab', 'bookmarks', 'recent_tabs', 'history', 'settings', 'downloads', 'help_&_feedback', 'desktop_site']"
+79,고급 설정 부분으로 스크롤 내려,SWIPE,['DOWN'],[]
+80,개인 정보 탭해,PRESS,['privacy'],"['privacy', 'accessibility', 'site_settings', 'home_page', 'notifications', 'payment_methods', 'addresses_and_more', 'passwords', 'search_engine', 'sign_in_to_chrome', 'sync_and_google_services']"
+81,아래쪽으로 밀어,SWIPE,['DOWN'],[]
+82,크롬 시크릿 모드 실행해,OPEN,"['component:incognito', 'app:chrome']",[]
+83,브라우징 데이터 삭제하기 탭해,PRESS,['clear_browsing_data'],"['clear_browsing_data', 'do_not_track', 'access_payment_methods', 'google_services', 'preload_pages_for_faster_browsing_and_searching']"
+84,설정 탭해,PRESS,['settings'],"['new_tab', 'new_private_tab', 'bookmarks', 'find_in_page', 'history', 'settings', 'request_desktop_data', 'page', 'tools', 'help', 'add-ons']"
+85,개인 데이터 삭제 탭해,PRESS,['clear_private_data'],"['sign_in', 'make_firefox_your_default_browser', 'general', 'search', 'privacy', 'accessibility', 'notifications', 'advanced', 'clear_private_data', 'mozilla_firefox']"
+86,방문 기록 선택 해제해,PRESS,['browsing_history'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+87,데이터 지우기 탭해,PRESS,['clear_data'],"['open_tabs', 'browsing_history', 'search_history', 'downloads', 'form_history', 'cookies_&_active_logins', 'cache', 'offline_web_data', 'site_settings', 'synced_tabs', 'cancel', 'clear_data']"
+88,빈 곳을 위로 밀어,SWIPE,['UP'],[]
+89,설정 앱에서 모바일 네트워크 페이지 열어,OPEN,"['component:mobile_network', 'app:settings']",[]
+90,연결된 기기 탭해,PRESS,['connected_devices'],"['network_&_internet', 'connected_devices', 'apps', 'notifications', 'battery', 'storage', 'sound_&_vibration', 'display']"
+91,블루투스 탭해,PRESS,['bluetooth'],"['bluetooth', 'cast', 'printing', 'files_received_by_bluetooth', 'chromebook', 'nearby_share', 'android_auto']"
+92,설정 탭해,PRESS,['settings'],"['home', 'menu', 'settings', 'clock', 'youtube', 'music', 'gmail', 'maps', 'google', 'play_store']"
+93,트위터 앱 열어,OPEN,['app:twitter'],[]
+94,더 보기 클릭해,PRESS,['more'],"['more', 'home', 'explore', 'notifications', 'messages', 'bookmarks', 'lists', 'profile', 'tweet']"
+95,인증 앱 눌러,PRESS,['authentication_app'],"['authentication_app', 'security_key', 'text_message']"
+96,링크드인 모바일 앱 열어,OPEN,['app:linkedin'],[]
+97,로그인 및 보안 선택해,PRESS,['sign_in_and_security'],"['account_preferences', 'sign_in_and_security', 'visibility', 'communications', 'data_privacy', 'advertising_data']"
+98,이중 인증 켜기,PRESS,['two-factor_authentication'],"['phone_numbers', 'change_password', ""where_you're_signed_in"", 'two-factor_authentication']"
+99,인스타그램 열어,OPEN,['app:instagram'],[]
+100,설정을 탭해,PRESS,['settings'],"['archive', 'your_activity', 'or_code', 'saved', 'cart', 'close_friends', 'discover_people', 'settings']"
+101,보안 탭해,PRESS,['security'],"['privacy', 'security', 'help', 'about', 'theme', 'account', 'ads', 'notifications', 'follow_and_invite_friends']"
