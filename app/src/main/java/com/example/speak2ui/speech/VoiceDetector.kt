@@ -26,6 +26,7 @@ class VoiceDetector {
     private var noiseFloorDb = -60.0
 
     companion object {
+        private const val TAG = "Recoder"
         // Number of consecutive speech frames required to trigger the COLLECT state.
         const val VOICE_ON_FRAMES = 3
         // Number of consecutive silence frames required to trigger the IDLE state.

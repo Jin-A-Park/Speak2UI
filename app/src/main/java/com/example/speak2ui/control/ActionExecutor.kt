@@ -658,16 +658,15 @@ class ActionExecutor(
                 if (intent == "NONE") {
                     Log.e(
                         TAG,
-                        "Action: $intent - Input is unclear, not actionable, or lacks required information"
+                        "Action: $intent (Input is unclear, not actionable, or lacks required information)"
                     )
                 } else {
-                    Log.e(TAG, "Action: $intent - FAILED!")
+                    Log.e(TAG, "Action: $intent FAILED!")
                 }
             }
             if (message.isNotEmpty()) {
                 Log.d(TAG, message)
             }
-            putExtra("COMMAND_ACTION_COMPLETE", "화면 제어 완료")
         }.also { service.sendBroadcast(it) }
     }
 }

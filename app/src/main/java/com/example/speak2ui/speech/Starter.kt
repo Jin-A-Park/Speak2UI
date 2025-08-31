@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -38,7 +37,6 @@ class Starter : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 마이크 권한 확인/요청
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
             != PackageManager.PERMISSION_GRANTED
         ) {
@@ -85,8 +83,6 @@ class Starter : Activity() {
      * It sends an [SttService.ACTION_START] intent to the service.
      */
     private fun startSttAndFinish() {
-        // 사용자 제스처 직후 & 전경 상태에서 안전하게 FGS 시작
-        Log.d("STTStarter", "sttservice_gpt will start soon...")
         ContextCompat.startForegroundService(
             this,
             Intent(this, SttService::class.java).setAction(SttService.ACTION_START)

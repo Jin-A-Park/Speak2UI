@@ -51,6 +51,10 @@ class OverlayService : Service() {
     // 전체화면 “시작/종료” 메뉴 뷰
     private var menuView: View? = null
 
+    companion object {
+        private const val TAG = "Overlay"
+    }
+
     /**
      * This service does not support binding, so this method returns null.
      */
@@ -65,7 +69,7 @@ class OverlayService : Service() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate() {
         super.onCreate()
-        Log.d("OverlayService", "✅ OverlayService started")
+        Log.d(TAG, "✅ OverlayService started")
 
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
 
@@ -121,12 +125,12 @@ class OverlayService : Service() {
                         val dist2 = dxUp * dxUp + dyUp * dyUp
                         // 클릭 처리부
                         if (dist2 < CLICK_THRESHOLD * CLICK_THRESHOLD) {
-                            Log.d("OverlayService", "Overlay button clicked")
+                            Log.d(TAG, "Overlay button clicked")
 
                             if (!hasOverlayPermission()) {
                                 Toast.makeText(
                                     this@OverlayService,
-                                    "오버레이 권한이 필요합니다",
+                                    "Need permission for 'Display over other apps'",
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 return true
@@ -134,7 +138,7 @@ class OverlayService : Service() {
                             if (!hasMicPermission()) {
                                 Toast.makeText(
                                     this@OverlayService,
-                                    "마이크 권한이 필요합니다",
+                                    "Need permission for 'Microphone'",
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 return true
@@ -142,7 +146,7 @@ class OverlayService : Service() {
                             if (!isAnyA11yEnabled()) {
                                 Toast.makeText(
                                     this@OverlayService,
-                                    "접근성 서비스를 활성화해주세요",
+                                    "Turn on Speak2UI in 'Accessibility'",
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 return true
@@ -157,7 +161,7 @@ class OverlayService : Service() {
             }
         })
         windowManager.addView(overlayButton, params)
-        Log.d("OverlayService", "✅ overlayButton added")
+        Log.d(TAG, "✅ Overlay button registered")
     }
 
     /**
@@ -173,7 +177,7 @@ class OverlayService : Service() {
                 windowManager.removeView(overlayButton)
             } catch (_: Exception) {
             }
-            Log.d("OverlayService", "overlayButton removed")
+            Log.d(TAG, "✅ Overlay button removed")
         }
     }
     // ===== 메뉴 뷰 =====
@@ -188,7 +192,6 @@ class OverlayService : Service() {
 
         val layoutFlag = LayoutParams.TYPE_APPLICATION_OVERLAY
 
-        // 버튼을 눌러야 하므로 NOT_FOCUSABLE 사용하지 않음
         val menuParams = LayoutParams(
             LayoutParams.MATCH_PARENT,
             LayoutParams.MATCH_PARENT,
@@ -217,7 +220,7 @@ class OverlayService : Service() {
         }
 
         val startBtn = Button(this).apply {
-            text = "시작"
+            text = "On"
             textSize = 22f
             layoutParams = lp
             setTextColor(Color.WHITE)
@@ -225,11 +228,11 @@ class OverlayService : Service() {
 
             // 배경 Drawable을 직접 생성 및 적용
             background = RippleDrawable(
-                ColorStateList.valueOf("#80FFFFFF".toColorInt()), // 터치 시 물결 효과 색상
-                GradientDrawable().apply { // 버튼 기본 배경
+                ColorStateList.valueOf("#80FFFFFF".toColorInt()),
+                GradientDrawable().apply {
                     shape = GradientDrawable.RECTANGLE
-                    cornerRadius = 8 * resources.displayMetrics.density // 8dp 둥근 모서리
-                    setColor("#333333".toColorInt()) // 배경색
+                    cornerRadius = 8 * resources.displayMetrics.density
+                    setColor("#333333".toColorInt())
                 },
                 null
             )
@@ -245,7 +248,7 @@ class OverlayService : Service() {
         }
 
         val exitBtn = Button(this).apply {
-            text = "종료"
+            text = "Off"
             textSize = 22f
             layoutParams = lp
             setTextColor(Color.WHITE)
@@ -253,11 +256,11 @@ class OverlayService : Service() {
 
             // 동일한 배경 스타일을 직접 생성 및 적용
             background = RippleDrawable(
-                ColorStateList.valueOf("#80FFFFFF".toColorInt()), // 터치 시 물결 효과 색상
-                GradientDrawable().apply { // 버튼 기본 배경
+                ColorStateList.valueOf("#80FFFFFF".toColorInt()),
+                GradientDrawable().apply {
                     shape = GradientDrawable.RECTANGLE
-                    cornerRadius = 8 * resources.displayMetrics.density // 8dp 둥근 모서리
-                    setColor("#333333".toColorInt()) // 배경색
+                    cornerRadius = 8 * resources.displayMetrics.density
+                    setColor("#333333".toColorInt())
                 },
                 null
             )
@@ -292,7 +295,6 @@ class OverlayService : Service() {
         }
     }
 
-    // ===== 권한/상태 체크 =====
     /**
      * Checks if the app has permission to draw over other apps.
      * @return `true` if the permission is granted, `false` otherwise.

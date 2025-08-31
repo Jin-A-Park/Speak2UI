@@ -6,7 +6,6 @@ import android.graphics.PixelFormat
 import android.graphics.Rect
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -178,17 +177,17 @@ class TooltipService : AccessibilityService() {
                             bounds = bounds
                         )
                     )
-                    """
+                    /*
                     Log.d(
                         TAG,
                         "[ICON] " +
-                                "tooltip=${tooltipMap.size}, class=${n.className}, id=${n.viewIdResourceName ?: "no-id"}, " +
+                                "tooltip=${tooltipMap.size}, class=${n.className}, id=${n.viewIdResourceName ?: ""}, " +
                                 "text=${n.text ?: ""}, desc=${n.contentDescription ?: ""}, " +
                                 "clickable=${n.isClickable}, editable=${n.isEditable}, focusable=${n.isFocusable}, " +
                                 "enabled=${n.isEnabled}, labeledBy=${n.getLabeledBy()?.className ?: "null"}, " +
                                 "bounds=($bounds), hintText=${n.hintText}"
                     )
-                    """
+                    */
                 }
 
                 // Condition 2: Add tooltip to search bars (either EditTexts or nodes that look like search bars).
@@ -205,30 +204,29 @@ class TooltipService : AccessibilityService() {
                             bounds = bounds
                         )
                     )
-                    """
+                    /*
                     Log.d(
                         TAG,
                         "[SEARCH] " +
-                                "tooltip=${tooltipMap.size}, class=${n.className}, id=${n.viewIdResourceName ?: "no-id"}, " +
+                                "tooltip=${tooltipMap.size}, class=${n.className}, id=${n.viewIdResourceName ?: ""}, " +
                                 "text=${n.text ?: ""}, desc=${n.contentDescription ?: ""}, " +
                                 "clickable=${n.isClickable}, editable=${n.isEditable}, focusable=${n.isFocusable}, " +
                                 "enabled=${n.isEnabled}, labeledBy=${n.getLabeledBy()?.className ?: "null"}, " +
                                 "bounds=($bounds), hintText=${n.hintText}"
                     )
-                    """
+                    */
                 }
             }
-            """
-            // Optional debug log for every traversed node.
+            /*
             Log.d(
                 TAG,
-                "class=${n.className}, id=${n.viewIdResourceName ?: "no-id"}, " +
+                "class=${n.className}, id=${n.viewIdResourceName ?: ""}, " +
                         "text=${n.text ?: ""}, desc=${n.contentDescription ?: ""}, " +
                         "clickable=${n.isClickable}, editable=${n.isEditable}, " +
                         "labeledBy=${n.getLabeledBy()?.className ?: "null"}, " +
                         "bounds=($bounds), hintText=${n.hintText}"
             )
-            """
+            */
         }
 
         // Recurse to all children of the current node.
@@ -269,14 +267,11 @@ class TooltipService : AccessibilityService() {
         val screenW = metrics.widthPixels
         val screenH = metrics.heightPixels
 
-        val offsetX = (metrics.density).toInt()
-        val offsetY = (60f * metrics.density).toInt()
-
         val centerX = (bounds.left + bounds.right) / 2
         val centerY = (bounds.top + bounds.bottom) / 2
 
-        var x = centerX + offsetX - (w / 2)
-        var y = centerY - offsetY - (h / 2)
+        var x = centerX + (w / 2)
+        var y = centerY - h
 
         x = x.coerceIn(0, screenW - w)
         y = y.coerceIn(0, screenH - h)

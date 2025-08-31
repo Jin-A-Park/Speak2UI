@@ -22,9 +22,15 @@ import com.example.speak2ui.api.STT_MODEL_NAME
 class SttClient {
     private val openaiApiKey = OPENAI_API_KEY
     private val sttModelName = STT_MODEL_NAME
-    private val sttLanguage = "ko"
+
+    // Uncomment the Request body to specify the target language.
+    private val sttLanguage = "en" // or "ko"
     private val client = OkHttpClient()
     private val txMutex = Mutex()
+
+    companion object {
+        private const val TAG = "Stt"
+    }
 
     /**
      * Transcribes the given WAV audio file using the OpenAI API.
@@ -45,7 +51,7 @@ class SttClient {
                 .addFormDataPart("model", sttModelName)
                 .addFormDataPart("response_format", "text")
                 .addFormDataPart("temperature", "0")
-                .addFormDataPart("language", sttLanguage)
+                // .addFormDataPart("language", sttLanguage)
                 .build()
 
             val request = Request.Builder()
@@ -59,19 +65,19 @@ class SttClient {
                 client.newCall(request).execute().use { response ->
                     val responseBody = response.body?.string().orEmpty().trim()
                     if (!response.isSuccessful) {
-                        Log.e("SttClient", "HTTP ${response.code}: $responseBody")
+                        Log.e(TAG, "HTTP ${response.code}: $responseBody")
                         return@use
                     }
 
                     if (responseBody.isNotBlank()) {
                         sttResponse = responseBody
                     } else {
-                        Log.d("SttClient", "Got empty transcript; no command sent.")
+                        Log.d(TAG, "Got empty transcript; no command sent.")
                     }
                 }
             }
         } catch (e: Exception) {
-            Log.e("SttClient", "Transcription failed", e)
+            Log.e(TAG, "Transcription failed", e)
         } finally {
             // Ensure the temporary audio file is always deleted.
             wavFile.delete()

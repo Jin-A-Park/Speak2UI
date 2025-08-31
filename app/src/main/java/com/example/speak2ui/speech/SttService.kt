@@ -34,7 +34,14 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.example.speak2ui.control.Accessibility
 import com.example.speak2ui.control.TooltipService
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import java.io.File
 import kotlin.math.roundToInt
 
@@ -52,18 +59,25 @@ class SttService : Service() {
     private lateinit var audioRecorder: AudioRecorder
     private lateinit var vad: VoiceDetector
     private lateinit var sttClient: SttClient
+    private val initialSpeechBuffer = mutableListOf<ShortArray>()
 
     // Flags to control the listening loop state.
-    @Volatile private var isScreenControlCompleted = false
-    @Volatile private var didGoHome = false
-    @Volatile private var listeningPaused = false
+    @Volatile
+    private var isScreenControlCompleted = false
+
+    @Volatile
+    private var didGoHome = false
+
+    @Volatile
+    private var listeningPaused = false
 
     private var utterStartMs = 0L
     private var listenStartMs = 0L
 
     companion object {
+        private const val TAG = "Stt"
         const val ACTION_START = "com.example.speak2ui.speech.START"
-        const val ACTION_STOP  = "com.example.speak2ui.speech.STOP"
+        const val ACTION_STOP = "com.example.speak2ui.speech.STOP"
 
         private const val NOTI_ID = 101
         private const val NOTI_CHANNEL_ID = "SttServiceChannel"
@@ -82,19 +96,20 @@ class SttService : Service() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action == "com.example.SCREEN_CONTROL_COMPLETE") {
                 isScreenControlCompleted = true
-                showOverlayMessage(this@SttService, "화면 제어 완료!", position = Gravity.BOTTOM)
+                // showOverlayMessage(this@SttService, "화면 제어 완료!", position = Gravity.BOTTOM)
             }
         }
     }
 
     override fun onCreate() {
-        super.onCreate() 
+        super.onCreate()
         audioRecorder = AudioRecorder(this)
         vad = VoiceDetector()
         sttClient = SttClient()
 
         val filter = IntentFilter("com.example.SCREEN_CONTROL_COMPLETE")
-        val receiverFlags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) RECEIVER_NOT_EXPORTED else 0
+        val receiverFlags =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) RECEIVER_NOT_EXPORTED else 0
         registerReceiver(screenControlReceiver, filter, receiverFlags)
     }
 
@@ -112,7 +127,7 @@ class SttService : Service() {
         }
 
         if (!hasRecordPermission()) {
-            Log.e("STTService", "❌ RECORD_AUDIO permission not granted. Stopping service.")
+            Log.e(TAG, "❌ Recording permission not granted. Stopping service.")
             stopSelf()
             return START_NOT_STICKY
         }
@@ -124,9 +139,7 @@ class SttService : Service() {
             goHome()
             didGoHome = true
         }
-
         startForegroundAndListen()
-
         return START_STICKY
     }
 
@@ -141,7 +154,8 @@ class SttService : Service() {
         audioRecorder.cleanUpTempFile()
         try {
             unregisterReceiver(screenControlReceiver)
-        } catch (_: Exception) {}
+        } catch (_: Exception) {
+        }
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -151,13 +165,12 @@ class SttService : Service() {
      */
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     private fun startForegroundAndListen() {
-        showOverlayMessage(this, "새로운 음성인식 준비 완료", position = Gravity.BOTTOM)
+        showOverlayMessage(this, "Listening...", position = Gravity.BOTTOM)
 
         if (audioRecorder.isRecording || listeningPaused) {
-            Log.d("STTService", "Already recording or paused, skipping start.")
+            Log.d(TAG, "Already recording or paused, skipping start.")
             return
         }
-        Log.d("STTProcessLog", "🚀 Starting listening loop...")
         listenStartMs = SystemClock.elapsedRealtime()
         serviceScope.launch { recordLoop() }
     }
@@ -182,7 +195,7 @@ class SttService : Service() {
     @RequiresPermission(value = "android.permission.RECORD_AUDIO")
     private suspend fun recordLoop() {
         if (!hasRecordPermission()) {
-            Log.e("STTService", "❌ RECORD_AUDIO permission missing at runtime.")
+            Log.e(TAG, "❌ Recording permission missing at runtime.")
             stopSelf()
             return
         }
@@ -200,7 +213,6 @@ class SttService : Service() {
             }
             delay(FRAME_MS.toLong())
         }
-        Log.d("STTService", "✅ Noise floor calibrated")
 
         while (audioRecorder.isRecording) {
             val n = audioRecorder.read(readBuffer)
@@ -210,7 +222,7 @@ class SttService : Service() {
                 delay(10)
             }
         }
-        Log.d("STTProcessLog", "🛑 Recording stopped.")
+        Log.d(TAG, "🛑 Recording stopped.")
     }
 
     /**
@@ -233,23 +245,29 @@ class SttService : Service() {
         when (vad.currentVadState) {
             VoiceDetector.VadState.IDLE -> {
                 if (isSpeech) {
+                    // Buffer initial speech frames.
+                    initialSpeechBuffer.add(frame)
                     vad.onCount++
                     if (vad.onCount >= VoiceDetector.VOICE_ON_FRAMES) {
-                        // Speech detected, start collecting audio frames.
-                        Log.d("STTProcessLog", "🗣️ Speech detected, starting collection.")
-                        showOverlayMessage(this, "외부 음성 감지됨", position = Gravity.BOTTOM)
+                        // Threshold met, transition to COLLECT state.
+                        Log.d(TAG, "🗣️ Speech detected, starting collection.")
+                        showOverlayMessage(this, "Recording...", position = Gravity.BOTTOM)
                         vad.currentVadState = VoiceDetector.VadState.COLLECT
                         utterStartMs = now
                         vad.offCount = 0
                         audioRecorder.createPcmFile()
-                        audioRecorder.appendPcm(frame)
+                        // Write the buffered frames to the file.
+                        initialSpeechBuffer.forEach { audioRecorder.appendPcm(it) }
+                        initialSpeechBuffer.clear()
                     }
                 } else {
-                    // Not speech, update noise floor and reset counter.
+                    // Not speech, so clear buffer and reset counter.
                     vad.updateNoiseFloor(frame)
                     vad.onCount = 0
+                    initialSpeechBuffer.clear()
                 }
             }
+
             VoiceDetector.VadState.COLLECT -> {
                 audioRecorder.appendPcm(frame)
                 if (isSpeech) {
@@ -277,7 +295,7 @@ class SttService : Service() {
      */
     @RequiresPermission(value = "android.permission.RECORD_AUDIO")
     private fun finalizeAndSend() {
-        showOverlayMessage(this, "음성 감지 종료. 텍스트로 변환 중...", position = Gravity.BOTTOM)
+        // showOverlayMessage(this, "Executing...", position = Gravity.BOTTOM)
 
         val recordingDuration = SystemClock.elapsedRealtime() - utterStartMs
         vad.reset()
@@ -290,7 +308,7 @@ class SttService : Service() {
         // Ignore utterances that are too short.
         val durationMs = (bytesWritten.toDouble() / 2 / AudioRecorder.SAMPLE_RATE) * 1000.0
         if (durationMs < MIN_SPEECH_MS) {
-            Log.d("STTService", "Speech too short ($durationMs ms), ignoring.")
+            Log.d(TAG, "Speech too short ($durationMs ms), ignoring.")
             fileToFinalize.delete()
             return
         }
@@ -298,13 +316,12 @@ class SttService : Service() {
         try {
             audioRecorder.updateWavHeader(fileToFinalize, bytesWritten)
         } catch (e: java.io.IOException) {
-            Log.e("STTService", "Failed to update WAV header", e)
+            Log.e(TAG, "Failed to update WAV header", e)
             fileToFinalize.delete()
             return
         }
 
-        Log.d("STTService", "💾 Audio file saved")
-        Log.d("STTProcessLog", "🕒 Total recording duration: $recordingDuration ms.")
+        Log.d(TAG, "🕒 Recorded $recordingDuration ms.")
 
         // Pause listening and stop the recorder before transcription.
         listeningPaused = true
@@ -321,10 +338,10 @@ class SttService : Service() {
     private suspend fun transcribeAndProcess(wavFile: File) {
         val sttResponse = sttClient.transcribeWavFile(wavFile)
         if (sttResponse != null) {
-            Log.d("STTProcessLog", "📝 ASR Result: \"$sttResponse\"")
-            showOverlayMessage(this, "음성인식 완료! 결과: $sttResponse", position = Gravity.BOTTOM)
+            Log.i(TAG, "📝 ASR Result: \"$sttResponse\"")
+            showOverlayMessage(this, sttResponse, position = Gravity.BOTTOM)
             val ok = sendCommandAndAwait(sttResponse)
-            if (!ok) Log.w("STTService", "⚠️ Timeout waiting for screen control completion.")
+            if (!ok) Log.w(TAG, "⚠️ Timeout: waiting for screen control completion.")
         }
         withContext(Dispatchers.Main) {
             restartListening()
@@ -343,7 +360,6 @@ class SttService : Service() {
             putExtra("command", command)
         }.also {
             sendBroadcast(it)
-            Log.d("STTService", "📡 Command broadcasted: \"$command\"")
         }
 
         isScreenControlCompleted = false
@@ -370,8 +386,10 @@ class SttService : Service() {
             .createNotificationChannel(channel)
 
         val stopIntent = Intent(this, Service::class.java).apply { action = ACTION_STOP }
-        val stopPending = PendingIntent.getService(this, 0, stopIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        val stopPending = PendingIntent.getService(
+            this, 0, stopIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
 
         return NotificationCompat.Builder(this, NOTI_CHANNEL_ID)
             .setSmallIcon(android.R.drawable.ic_btn_speak_now)
@@ -394,13 +412,17 @@ class SttService : Service() {
 
     /** Checks if the app has the RECORD_AUDIO permission. */
     private fun hasRecordPermission(): Boolean =
-        ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
 
     /** Checks if the app has the SYSTEM_ALERT_WINDOW (overlay) permission. */
     private fun hasOverlayPermission(): Boolean = Settings.canDrawOverlays(this)
 
     /** Checks if all required permissions (record, overlay, accessibility) are granted. */
-    private fun hasRequiredPermissions(): Boolean = hasRecordPermission() && hasOverlayPermission() && isAnyA11yEnabled()
+    private fun hasRequiredPermissions(): Boolean =
+        hasRecordPermission() && hasOverlayPermission() && isAnyA11yEnabled()
 
     /** Checks if either of the app's accessibility services are enabled. */
     private fun isAnyA11yEnabled(): Boolean =
@@ -413,7 +435,10 @@ class SttService : Service() {
      */
     private fun isA11yEnabledFor(cls: Class<out AccessibilityService>): Boolean {
         val component = ComponentName(this, cls)
-        val enabledStr = Settings.Secure.getString(contentResolver, Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES) ?: ""
+        val enabledStr = Settings.Secure.getString(
+            contentResolver,
+            Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+        ) ?: ""
         if (enabledStr.split(':').any { it.equals(component.flattenToString(), true) }) {
             return true
         }
@@ -448,12 +473,12 @@ class SttService : Service() {
                 text = message
                 setTextColor(Color.WHITE)
                 textSize = 14f
-                setPadding(dp(context,14), dp(context,10), dp(context,14), dp(context,10))
+                setPadding(dp(context, 14), dp(context, 10), dp(context, 14), dp(context, 10))
                 background = GradientDrawable().apply {
-                    cornerRadius = dp(context,12).toFloat()
+                    cornerRadius = dp(context, 12).toFloat()
                     setColor(0xCC222222.toInt())
                 }
-                elevation = dp(context,8).toFloat()
+                elevation = dp(context, 8).toFloat()
             }
             tv.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
 
@@ -481,8 +506,8 @@ class SttService : Service() {
 
             tv.alpha = 0f
             tv.translationY = when (position) {
-                Gravity.TOP -> -dp(context,24).toFloat()
-                Gravity.BOTTOM ->  dp(context,24).toFloat()
+                Gravity.TOP -> -dp(context, 24).toFloat()
+                Gravity.BOTTOM -> dp(context, 24).toFloat()
                 else -> 0f
             }
 
@@ -492,17 +517,25 @@ class SttService : Service() {
             tv.animate().alpha(1f).translationY(0f).setDuration(160).withEndAction {
                 tv.postDelayed({
                     val outDy = when (position) {
-                        Gravity.TOP -> -dp(context,12).toFloat()
-                        Gravity.BOTTOM ->  dp(context,12).toFloat()
+                        Gravity.TOP -> -dp(context, 12).toFloat()
+                        Gravity.BOTTOM -> dp(context, 12).toFloat()
                         else -> 0f
                     }
                     tv.animate().alpha(0f).translationY(outDy).setDuration(140).withEndAction {
-                        try { wm.removeView(tv) } catch (_: Exception) {}
+                        try {
+                            wm.removeView(tv)
+                        } catch (_: Exception) {
+                        }
                     }.start()
                 }, durationMs)
             }.start()
 
-            tv.setOnClickListener { try { wm.removeView(tv) } catch (_: Exception) {} }
+            tv.setOnClickListener {
+                try {
+                    wm.removeView(tv)
+                } catch (_: Exception) {
+                }
+            }
         }
     }
 

@@ -59,7 +59,7 @@ class AudioRecorder(private val context: Context) {
 
             recorder?.startRecording()
         } catch (e: SecurityException) {
-            Log.e("AudioRecorder", "AudioRecord permission error", e)
+            Log.e(TAG, "Recording not allowed", e)
         }
     }
 
@@ -93,7 +93,7 @@ class AudioRecorder(private val context: Context) {
             writeWavHeaderPlaceholder(pcmFileStream!!)
             pcmBytesWritten = 0
         } catch (e: IOException) {
-            Log.e("AudioRecorder", "Failed to create temp file", e)
+            Log.e(TAG, "Failed to create audio file", e)
             cleanUpTempFile()
         }
     }
@@ -109,7 +109,7 @@ class AudioRecorder(private val context: Context) {
             pcmFileStream?.write(byteBuffer.array())
             pcmBytesWritten += byteBuffer.array().size
         } catch (e: IOException) {
-            Log.e("AudioRecorder", "Failed to write PCM data", e)
+            Log.e(TAG, "Failed to write PCM data", e)
             cleanUpTempFile()
         }
     }
@@ -121,7 +121,7 @@ class AudioRecorder(private val context: Context) {
         try {
             pcmFileStream?.close()
         } catch (e: IOException) {
-            Log.e("AudioRecorder", "Failed to close temp file stream", e)
+            Log.e(TAG, "Failed to close PCM file stream", e)
         } finally {
             pcmFileStream = null
         }
@@ -162,8 +162,10 @@ class AudioRecorder(private val context: Context) {
         byteBuffer.putShort(1) // AudioFormat, 1 for PCM
         byteBuffer.putShort(channels) // NumChannels
         byteBuffer.putInt(sampleRate) // SampleRate
+
         val byteRate = sampleRate * channels * (bitsPerSample / 8)
         byteBuffer.putInt(byteRate) // ByteRate
+
         val blockAlign: Short = (channels * (bitsPerSample / 8)).toShort()
         byteBuffer.putShort(blockAlign) // BlockAlign
         byteBuffer.putShort(bitsPerSample) // BitsPerSample

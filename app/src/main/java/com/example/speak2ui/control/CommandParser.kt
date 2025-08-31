@@ -59,11 +59,11 @@ class CommandParser {
                 if (response.isSuccessful && responseBody != null) {
                     parseResponse(responseBody)
                 } else {
-                    Log.e(TAG, "API Error: ${response.code} - $responseBody")
+                    Log.e(TAG, "[${response.code}] $responseBody")
                     ParsedCommand("error", emptyList())
                 }
             } catch (e: Exception) {
-                Log.e(TAG, "Exception: ${e.message}")
+                Log.e(TAG, "API Error: ${e.message}")
                 ParsedCommand("error", emptyList())
             }
         }
@@ -117,7 +117,7 @@ class CommandParser {
     2. App identifier (e.g., "app:settings")
   - check allClickableNode list to find similar app or UI component (apps are value with isApp=true)
 - **SWIPE**: `value` must be exactly one of: UP, DOWN, LEFT, RIGHT
-- **ENTER**: `value` contains the text to type (string only)
+- **ENTER**: `value` contains the text to type (e.g. "당근 주스" from "당근 주스라고 입력해")
 - **HOME/BACK/OVERVIEW_BUTTON/NONE**: `value` is empty string
 - **Only the OPEN action can return a list as value. All other actions must return a single string or empty string.**
 

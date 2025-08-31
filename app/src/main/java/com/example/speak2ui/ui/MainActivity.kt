@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var overlayPermissionLauncher: ActivityResultLauncher<Intent>
     private lateinit var micPermissionLauncher: ActivityResultLauncher<String>
 
+    companion object {
+        private const val TAG = "Main"
+    }
+
     /**
      * Called when the activity is first created.
      *
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // 레이아웃 설정
+        setContentView(R.layout.activity_main)
 
         overlayPermissionLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -44,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             if (Settings.canDrawOverlays(this)) {
                 ensureMicPermissionAndStartOverlay()
             } else {
-                Toast.makeText(this, "오버레이 권한을 허용해야 버튼과 툴팁을 모두 사용할 수 있습니다", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "To enable the button and tooltips, you need to grant the 'Display over other apps' permission.", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -57,10 +61,9 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
                 }
             } else {
-                Toast.makeText(this, "마이크 권한을 허용해야 음성인식이 실행됩니다", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Microphone permission is required for voice recognition.", Toast.LENGTH_LONG).show()
             }
         }
-
         checkOverlayPermission()
     }
 

@@ -54,7 +54,7 @@ class Accessibility : AccessibilityService() {
     private var tooltipMap = mutableListOf<TooltipMap>()
 
     companion object {
-        private const val TAG = "A11y"
+        private const val TAG = "ActionExecutor"
     }
 
     override fun onCreate() {
@@ -175,7 +175,7 @@ class Accessibility : AccessibilityService() {
                 executor.handleParsedCommand(parsed)
                 Log.d(
                     TAG,
-                    "🕒 Command completed (${SystemClock.elapsedRealtime() - actionStartMs} ms)"
+                    "Command completed (${SystemClock.elapsedRealtime() - actionStartMs} ms)"
                 )
             }
         }

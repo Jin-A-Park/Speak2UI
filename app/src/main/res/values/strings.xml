@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">speak2ui</string>
+    <string name="app_name">Speak2UI</string>
     <string name="accessibility_service_description">
         Voice screen control accessibility service
     </string>

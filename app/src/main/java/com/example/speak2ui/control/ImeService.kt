@@ -23,10 +23,6 @@ class ImeService : InputMethodService() {
     private var pendingText: String? = null
     private var pendingTargetPackage: String? = null
 
-    companion object {
-        private const val TAG = "IMEService"
-    }
-
     /**
      * Tries to perform a sequence of IME actions until one succeeds.
      * @param connection The current [InputConnection].
