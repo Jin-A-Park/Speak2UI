@@ -270,7 +270,7 @@ class TooltipService : AccessibilityService() {
         val centerX = (bounds.left + bounds.right) / 2
         val centerY = (bounds.top + bounds.bottom) / 2
 
-        var x = centerX + (w / 2)
+        var x = centerX
         var y = centerY - h
 
         x = x.coerceIn(0, screenW - w)

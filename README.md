@@ -1,10 +1,6 @@
-# Speak2UI: Enhancing Accessibility through Voice and LLM-Based UI Interaction
+# Speak2UI: Voice-Driven Assistive Interfaces for Precision Mobile Accessibility
 
-Mobile interfaces present significant accessibility challenges for users with motor impairments, as existing solutions like face recognition and gaze tracking lack precision, while voice control systems suffer from data dependency issues. We introduce Speak2UI, a novel voice-controlled mobile UI system that leverages large language models(LLMs) to overcome these limitations.
-
-The system integrates Voice Activity Detection (VAD) with real-time Speech-to-Text conversion using OpenAI's GPT-4o-mini. A Command Parser module utilizes GPT-4o-mini to extract structured user intent from voice commands, defining a comprehensive actions(PRESS, SWIPE, OPEN, etc.) with context-aware filtering using real-time UI information.
-
-Evaluation across English and Korean datasets demonstrates that Speak2UI achieves superior command interpretation accuracy compared to deep-learning baselines, with excellent Exact Match Accuracy and rapid inference times. Results highlight the effectiveness of LLM-based zero-shot inference over traditional supervised learning for voice command parsing, while exhibiting robust cross-lingual generalization.
+This study proposes "Speak2UI", a novel voice-based mobile UI control system that leverages pre-trained large language models to minimize data dependency and enable direct voice control of low-level UI elements. The system comprises Voice Activity Detection-based speech recognition, GPT-4o-mini command parsing supporting ten action types with context-aware filtering, and UI control modules. Performance evaluation compared command recognition accuracy with the existing system.
 
 ## 🔎 Demo
 
@@ -18,7 +14,7 @@ This section outlines the environment settings required to build the project suc
 
 - Compile Sdk Version: 36
 - Min Sdk Version: 30
-- Java Version: Java 21
+- Java Version: 21
 - Kotlin Compiler Extension Version: 1.5.0
 
 ## ⚙️ Installation & Build
@@ -48,3 +44,10 @@ This section outlines the environment settings required to build the project suc
 
     - Select your desired emulator or physical device.
     - Click the 'Run' button to build and run the application.
+
+## 📱 Activate
+
+1. Enable `Speak2UI` in Settings > Accessibility.
+2. Turn on `Display over other apps` in Settings > App info > Speak2UI.
+3. Tap the MIC button in the top-left corner.
+4. Tap `On`, and you’re all set!
