@@ -8,7 +8,7 @@ This study proposes "Speak2UI", a novel voice-based mobile UI control system tha
 
 Test Environment: Samsung S8+ (Android API level 34)
 
-## 📝 Build Environment
+## 📑 Build Environment
 
 This section outlines the environment settings required to build the project successfully.
 
@@ -51,3 +51,18 @@ This section outlines the environment settings required to build the project suc
 2. Turn on `Display over other apps` in Settings > App info > Speak2UI.
 3. Tap the MIC button in the top-left corner.
 4. Tap `On`, and you’re all set!
+
+## 📝 Citataion
+
+```bib
+@article{ART003300241,
+  author  = {Sung-Jin Park and Jin-A Park and Ha-Young Oh},
+  title   = {Speak2UI: Voice Assistance Technology for Mobile Accessibility},
+  journal = {Journal of the Korea Institute of Information and Communication Engineering},
+  year    = {2026},
+  volume  = {30},
+  number  = {1},
+  pages   = {46--53},
+  issn    = {2234-4772}
+}
+```
